@@ -17,15 +17,33 @@ public class Horse : MonoBehaviour {
 		// Externals (viewable by user)
 		"start", "corner", "outOfBox", "competing", "tenacious", "spurt"
 	};
-		
-	// Use this for initialization
-	void Start () {
+
+    //BAM ONE FULLY FUNCTIONINING HORSE NAME GENERATOR
+    //Called using HNG (Horse Name Generator)
+    public string HNG()
+    {
+        //Unity's way of loading a .txt file, located in "Resources" Folder, file name "horseNames".
+        TextAsset nameText = Resources.Load<TextAsset>("horseNames");
+
+        //Splits each entry that has an enter after it and #'s em.
+        string[] lines = nameText.text.Split("\n"[0]);
+
+        //Does math to find random name, names it "randomlyGeneratedName".
+        string randomlyGeneratedName = (lines[Random.Range(0, lines.Length)]);
+
+        //Returns a fully random generated name
+        return randomlyGeneratedName;
+
+    }
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 
 	// maek random horse
 	public Horse(double buff=1){
-		horseName = "Roger"; // Austin- stick yah filthy generater here.
+		horseName = HNG(); // Filthy generator inserted! Austin- stick yah filthy generater here.
 		gender = ((int)(Random.value + .5)) == 1; // Be you boy or girl?
 		age = Random.value * 4 + 2;  // Equal distribution between 2 and 6.
 

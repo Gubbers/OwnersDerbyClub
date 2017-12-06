@@ -6,21 +6,28 @@ using UnityEngine.UI;
 
 public class horseNames : MonoBehaviour {
 
- 
-
-    void Start() {
-
+    public string HNG()
+    {
         //Unity's way of loading a .txt file, located in "Resources" Folder, file name "horseNames".
         TextAsset nameText = Resources.Load<TextAsset>("horseNames");
 
         //Splits each entry that has an enter after it and #'s em.
         string[] lines = nameText.text.Split("\n"[0]);
 
-        //Does math to find random name, names it "sire".
+        //Does math to find random name, names it "randomlyGeneratedName".
         string randomlyGeneratedName = (lines[Random.Range(0, lines.Length)]);
 
+        return randomlyGeneratedName;
+
+    }
+
+
+    void Start() {
+
+        
+
         //Logs a randomly generated name (WORKING)!
-        Debug.Log(randomlyGeneratedName);
+        //Debug.Log(RandomlyGeneratedName());
 
 
         //*TO DO*\\
@@ -39,12 +46,12 @@ public class horseNames : MonoBehaviour {
 	}
 
     //This does stuff with a random GUI to Display the random horse name. doesn't work.
-    //void OnGUI()
-    //{
-        //if (GUI.Button(new Rect(50, 50, 50, 50), "generate name"))
-        //{
-           // Debug.Log(lines());
-        //}
-    //}
+    void OnGUI()
+    {
+        if (GUI.Button(new Rect(50, 50, 50, 50), "generate name"))
+        {
+            Debug.Log(HNG());
+        }
+    }
 
 }
