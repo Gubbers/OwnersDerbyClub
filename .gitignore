@@ -28,7 +28,7 @@ sysinfo.txt
 
 # Builds
 *.apk
-*.unitypackag
+*.unitypackage
 
 # Mac Fun
 .DS_Store
