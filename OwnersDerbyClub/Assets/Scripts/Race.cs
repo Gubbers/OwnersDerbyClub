@@ -41,4 +41,3 @@ public class Race : MonoBehaviour {
 
 	}
 }
-OwnersDerbyClub
