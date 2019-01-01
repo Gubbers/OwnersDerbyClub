@@ -88,7 +88,9 @@ public class Horse : MonoBehaviour {
 		foreach (var stat in statNames) {
 			Debug.Log (stat + ":\t\t" + stats [stat]);
 		}
+        Debug.Log(horseName);
 	}
+
 		
 	
 	// Update is called once per frame
